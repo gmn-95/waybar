@@ -108,6 +108,11 @@ pkill waybar
 waybar
 ```
 
+## Exemplo visual
+
+<img width="2555" height="33" alt="image" src="https://github.com/user-attachments/assets/d7760473-232c-46e6-a6ab-c32ea173914e" />
+
+
 ## Observações
 
 - A aparência e os cliques devem ser verificados dentro de uma sessão gráfica
