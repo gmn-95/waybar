@@ -1,0 +1,119 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 6,
+    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
+    "modules-center": ["clock", "custom/notifications"],
+    "modules-right": ["cpu", "custom/gpu-usage", "memory", "custom/cpu-temperature", "custom/gpu-temperature", "pulseaudio", "network#wifi", "bluetooth", "custom/power"],
+    "hyprland/workspaces": {
+        "format": "{name}  {windows}",
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format-window-separator": " ",
+        "window-rewrite-default": "",
+        "window-rewrite": {
+            "firefox": "󰈹",
+            "chromium": "",
+            "google-chrome": "",
+            "microsoft-edge": "󰇩",
+            "code": "󰨞",
+            "codium": "󰨞",
+            "kitty": "󰄛",
+            "foot": "󰆍",
+            "Alacritty": "",
+            "org.wezfurlong.wezterm": "",
+            "discord": "󰙯",
+            "vesktop": "󰙯",
+            "spotify": "󰓇",
+            "steam": "",
+            "obs": "󰑋",
+            "org.telegram.desktop": "",
+            "org.keepassxc.KeePassXC": "󰌾",
+            "thunar": "󰝰",
+            "org.gnome.Nautilus": "󰝰",
+            "vlc": "󰕼",
+            "mpv": "󰐹",
+            "Gimp": "",
+            "libreoffice": "󰈙"
+        }
+    },
+    "clock": {
+        "format": " {:%d/%m/%y  %H:%M:%S}",
+        "tooltip-format": "<big>{:%Y %B}</big>\\n<tt><small>{calendar}</small></tt>",
+        "on-click": "gnome-calendar",
+        "interval": 1
+    },
+    "custom/notifications": {
+        "exec": "sh ~/.config/waybar/scripts/notifications.sh",
+        "return-type": "json",
+        "interval": 2,
+        "on-click": "timeout 1s swaync-client --toggle-dnd --skip-wait"
+    },
+    "cpu": {
+        "interval": 2,
+        "format": " {usage}%",
+        "tooltip": true
+    },
+    "memory": {
+        "interval": 2,
+        "format": " {percentage}%",
+        "tooltip": true
+    },
+    "custom/gpu-usage": {
+        "exec": "sh ~/.config/waybar/scripts/gpu-usage.sh",
+        "interval": 3,
+        "tooltip": false
+    },
+    "custom/cpu-temperature": {
+        "exec": "sh ~/.config/waybar/scripts/cpu-temperature.sh",
+        "interval": 5,
+        "tooltip": false
+    },
+    "custom/gpu-temperature": {
+        "exec": "sh ~/.config/waybar/scripts/gpu-temperature.sh",
+        "interval": 5,
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "network#wifi": {
+        "interface": "wl*",
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "on-click": "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center wifi"
+    },
+    "bluetooth": {
+        "format": " off",
+        "format-on": " on",
+        "format-connected": " on",
+        "format-off": " off",
+        "format-disabled": " off",
+        "format-no-controller": " off",
+        "on-click": "blueman-manager"
+    },
+
+    "custom/power": {
+        "format": " ",
+        "tooltip": false,
+        "on-click": "wlogout"
+    }
+}
