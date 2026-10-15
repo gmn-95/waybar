@@ -110,7 +110,8 @@ waybar
 
 ## Exemplo visual
 
-<img width="2555" height="33" alt="image" src="https://github.com/user-attachments/assets/d7760473-232c-46e6-a6ab-c32ea173914e" />
+<img width="2555" height="33" alt="image" src="https://github.com/user-attachments/assets/40debb4b-dd31-42a8-a0f6-7e2dd03d4bf6" />
+
 
 
 ## Observações
